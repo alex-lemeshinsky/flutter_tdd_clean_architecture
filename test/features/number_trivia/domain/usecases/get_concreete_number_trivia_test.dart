@@ -5,15 +5,15 @@ import 'package:dartz/dartz.dart';
 import 'package:tdd_example/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:tdd_example/features/number_trivia/domain/usecases/get_concrete_number_trivia.dart';
 
-const int tNumber = 1;
-const NumberTrivia tNumberTrivia = NumberTrivia(number: 1, text: "text");
-
 class MockNumberTriviaRepository extends Mock
     implements NumberTriviaRepository {}
 
 void main() {
   late GetConcreteNumberTrivia usecase;
   late MockNumberTriviaRepository mockNumberTriviaRepository;
+
+  const int tNumber = 1;
+  const NumberTrivia tNumberTrivia = NumberTrivia(number: 1, text: "text");
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
