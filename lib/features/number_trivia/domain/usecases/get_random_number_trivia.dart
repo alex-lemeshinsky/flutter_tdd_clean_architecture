@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:tdd_example/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:tdd_example/core/usecases/usecase.dart';

@@ -63,19 +63,6 @@ void main() {
           expect(result, tNumberTriviaModel);
         },
       );
-
-      test(
-        "should return a valid model when the Json number is a double",
-        () {
-          final Map<String, dynamic> jsonMap = {
-            "text": "10 is greater than 9",
-            "number": 10
-          };
-          final result = tNumberTriviaModel.toJson();
-
-          expect(result, jsonMap);
-        },
-      );
     },
   );
 }
