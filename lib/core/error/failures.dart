@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:tdd_example/const.dart';
 
 abstract class Failure extends Equatable {
   final List properties;
@@ -7,6 +8,18 @@ abstract class Failure extends Equatable {
 
   @override
   List<Object?> get props => [properties];
+
+  @override
+  String toString() {
+    switch (runtimeType) {
+      case ServerFailure:
+        return serverFailureMessage;
+      case CacheFailure:
+        return cacheFailureMessage;
+      default:
+        return "Unexpected error";
+    }
+  }
 }
 
 // General failures

@@ -5,7 +5,7 @@ import 'package:tdd_example/features/number_trivia/data/models/number_trivia_mod
 import 'package:http/http.dart' as http;
 
 abstract class NumberTriviaRemoteDataSource {
-  Future<NumberTriviaModel> getConcreteNumberTrivia(int number);
+  Future<NumberTriviaModel> getConcreteNumberTrivia(num number);
   Future<NumberTriviaModel> getRandomNumberTrivia();
 }
 
@@ -15,7 +15,7 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
   NumberTriviaRemoteDataSourceImpl({required this.client});
 
   @override
-  Future<NumberTriviaModel> getConcreteNumberTrivia(int number) async {
+  Future<NumberTriviaModel> getConcreteNumberTrivia(num number) async {
     final response = await client.get(
       Uri.parse("http://numbersapi.com/$number"),
       headers: {"Content-Type": "application/json"},
