@@ -10,8 +10,6 @@ import 'package:tdd_example/features/number_trivia/domain/usecases/get_concrete_
 import 'package:tdd_example/features/number_trivia/domain/usecases/get_random_number_trivia.dart';
 import 'package:tdd_example/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
 
-import '../../data/repositories/number_trivia_repository_impl_test.dart';
-
 class MockGetConcreteNumberTrivia extends Mock
     implements GetConcreteNumberTrivia {}
 
@@ -177,8 +175,6 @@ void main() {
   group(
     "GetTriviaForRandomNumber",
     () {
-      const String tNumberString = "1";
-      const int tNumberParsed = 1;
       const NumberTrivia tNumberTrivia = NumberTrivia(number: 1, text: "text");
 
       void setUpMockGetRandomNumberTriviaSuccess() {
